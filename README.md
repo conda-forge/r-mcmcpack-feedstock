@@ -14,14 +14,16 @@ Summary: Contains functions to perform Bayesian inference using posterior simula
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-mcmcpack-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-mcmcpack-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-mcmcpack-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-mcmcpack-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-mcmcpack-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-mcmcpack-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-mcmcpack-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-mcmcpack-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-mcmcpack-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-mcmcpack-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-mcmcpack-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-mcmcpack-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-mcmcpack/badges/version.svg)](https://anaconda.org/conda-forge/r-mcmcpack)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-mcmcpack/badges/downloads.svg)](https://anaconda.org/conda-forge/r-mcmcpack)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--mcmcpack-green.svg)](https://anaconda.org/conda-forge/r-mcmcpack) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-mcmcpack.svg)](https://anaconda.org/conda-forge/r-mcmcpack) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-mcmcpack.svg)](https://anaconda.org/conda-forge/r-mcmcpack) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-mcmcpack.svg)](https://anaconda.org/conda-forge/r-mcmcpack) |
 
 Installing r-mcmcpack
 =====================
