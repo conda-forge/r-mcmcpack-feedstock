@@ -1,4 +1,4 @@
-{% set version = '1.4-0' %}
+{% set version = "1.4-4" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/MCMCpack_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/MCMCpack/MCMCpack_{{ version }}.tar.gz
-  sha256: d01f04b6d07e54a1f5c4f00b88ed9d96d660a9c9c02afe3429dbf5e0aa6ce533
+  sha256: 97e193d628f7161e59288ed594a313af3a520bf30d5a95f1ede0cb2a567cf9f7
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   skip: true  # [win32]
 
   rpaths:
