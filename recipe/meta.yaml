@@ -1,4 +1,4 @@
-{% set version = '1.4-5' %}
+{% set version = '1.4-6' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/MCMCpack_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/MCMCpack/MCMCpack_{{ version }}.tar.gz
-  sha256: da949cfa44f71bfff1c6ae06caf8fe4252dd6391aa4c8f0fb6e02c7d6b1cdfb5
+  sha256: 6bcd018d6fa589a6854ee1bcea18b9d6c4095f3deae9058f69afbb09cba873c7
 
 build:
   merge_build_host: True  # [win]
   number: 0
-  skip: True  # [win]
+  skip: True  # [r_base == "3.5.1"]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -37,14 +37,14 @@ requirements:
     - {{posix}}coreutils         # [win]
     - {{posix}}zip               # [win]
   host:
-    - r-base >=3.6
+    - r-base
     - r-mass
     - r-coda >=0.11_3
     - r-lattice
     - r-mcmc
     - r-quantreg
   run:
-    - r-base >=3.6
+    - r-base
     - {{native}}gcc-libs         # [win]
     - r-mass
     - r-coda >=0.11_3
@@ -76,8 +76,8 @@ extra:
     - conda-forge/r
 
 # Package: MCMCpack
-# Version: 1.4-5
-# Date: 2019-11-26
+# Version: 1.4-6
+# Date: 2020-02-12
 # Title: Markov Chain Monte Carlo (MCMC) Package
 # Author: Andrew D. Martin [aut], Kevin M. Quinn [aut], Jong Hee Park [aut,cre], Ghislain Vieilledent [ctb], Michael Malecki[ctb], Matthew Blackwell [ctb], Keith Poole [ctb], Craig Reed [ctb], Ben Goodrich [ctb], Ross Ihaka [cph], The R Development Core Team [cph], The R Foundation [cph], Pierre L'Ecuyer [cph], Makoto Matsumoto [cph], Takuji Nishimura [cph]
 # Maintainer: Jong Hee Park <jongheepark@snu.ac.kr>
@@ -87,8 +87,9 @@ extra:
 # License: GPL-3
 # SystemRequirements: gcc (>= 4.0)
 # URL: https://CRAN.R-project.org/package=MCMCpack
-# Packaged: 2019-11-28 00:40:52 UTC; park
+# Packaged: 2020-02-13 05:59:49 UTC; park
 # NeedsCompilation: yes
 # Repository: CRAN
 # RoxygenNote: 6.1.1
-# Date/Publication: 2019-12-01 12:50:02 UTC
+# Encoding: UTF-8
+# Date/Publication: 2020-02-13 07:10:06 UTC
