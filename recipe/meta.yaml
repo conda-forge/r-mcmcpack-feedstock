@@ -1,4 +1,4 @@
-{% set version = "1.4-9" %}
+{% set version = "1.5-0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/MCMCpack_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/MCMCpack/MCMCpack_{{ version }}.tar.gz
-  sha256: 2c45c188c753f566eb9b0429ca4e5af779309dadbaa689752cc63f77788b53bb
+  sha256: 795ffd3d62bf14d3ecb3f5307bd329cd75798cf4b270ff0e768bc71a35de0ace
 
 build:
   merge_build_host: true  # [win]
   number: 0
-  skip: true  # [r_base == "3.5.1"]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -59,7 +58,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=MCMCpack
-  license: GPL-3
+  license: GPL-3.0-only
   summary: Contains functions to perform Bayesian inference using posterior simulation for a number of statistical models. Most simulation is done in compiled C++ written in the Scythe Statistical Library Version 1.0.3. All models return 'coda' mcmc objects that can then be summarized using the 'coda' package. Some useful
     utility functions such as density functions, pseudo-random number generators for statistical distributions, a general purpose Metropolis sampling algorithm, and tools for visualization are provided.
   license_family: GPL3
