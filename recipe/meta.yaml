@@ -1,4 +1,4 @@
-{% set version = "1.6-2" %}
+{% set version = "1.6-3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/MCMCpack_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/MCMCpack/MCMCpack_{{ version }}.tar.gz
-  sha256: 17ef0f16e265bbaa9b3f72c24b6984d8fa931b4d29da66a943b89cf536b3dea2
+  sha256: cb14ba20690b31fd813b05565484c866425f072a5ad99a5cbf1da63588958db3
 
 build:
   merge_build_host: true  # [win]
