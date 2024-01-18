@@ -3,6 +3,7 @@ About r-mcmcpack-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-mcmcpack-feedstock/blob/main/LICENSE.txt)
 
+
 About r-mcmcpack
 ----------------
 
@@ -11,6 +12,7 @@ Home: https://CRAN.R-project.org/package=MCMCpack
 Package license: GPL-3.0-only
 
 Summary: Contains functions to perform Bayesian inference using posterior simulation for a number of statistical models. Most simulation is done in compiled C++ written in the Scythe Statistical Library Version 1.0.3. All models return 'coda' mcmc objects that can then be summarized using the 'coda' package. Some useful utility functions such as density functions, pseudo-random number generators for statistical distributions, a general purpose Metropolis sampling algorithm, and tools for visualization are provided.
+
 About r-mcmcpack
 ----------------
 
@@ -153,7 +155,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
