@@ -1,4 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -o xtrace -o nounset -o pipefail -o errexit
 
 export DISABLE_AUTOBREW=1
-$R CMD INSTALL --build . ${R_ARGS}
+
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" == "1" ]]; then
+    sed -i "s?\${R_HOME}?${BUILD_PREFIX}?" configure.ac
+fi
+
+$R CMD INSTALL --build . ${R_ARGS:-}
