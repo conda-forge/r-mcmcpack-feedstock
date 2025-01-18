@@ -35,6 +35,12 @@ requirements:
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-mass                       # [build_platform != target_platform]
+    - r-coda >=0.11_3              # [build_platform != target_platform]
+    - r-lattice                    # [build_platform != target_platform]
+    - r-mcmc                       # [build_platform != target_platform]
+    - r-quantreg                   # [build_platform != target_platform]
   host:
     - r-base
     - r-mass
