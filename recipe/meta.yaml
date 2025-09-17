@@ -12,19 +12,29 @@ source:
   sha256: 3b0b46746324197c38826cde06729f031311c3520d9d42815b7b356d29b58529
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ stdlib("c") }}                # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ stdlib("m2w64_c") }}          # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-mass                       # [build_platform != target_platform]
+    - r-coda >=0.11_3              # [build_platform != target_platform]
+    - r-lattice                    # [build_platform != target_platform]
+    - r-mcmc                       # [build_platform != target_platform]
+    - r-quantreg                   # [build_platform != target_platform]
+    - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("m2w64_c") }}      # [win]
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}sed
     - {{ posix }}grep              # [win]
@@ -35,12 +45,6 @@ requirements:
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
-    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
-    - r-mass                       # [build_platform != target_platform]
-    - r-coda >=0.11_3              # [build_platform != target_platform]
-    - r-lattice                    # [build_platform != target_platform]
-    - r-mcmc                       # [build_platform != target_platform]
-    - r-quantreg                   # [build_platform != target_platform]
   host:
     - r-base
     - r-mass
@@ -63,6 +67,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=MCMCpack
+  dev_url: https://github.com/cran/MCMCpack
   license: GPL-3.0-only
   summary: Contains functions to perform Bayesian inference using posterior simulation for a number of statistical models. Most simulation is done in compiled C++ written in the Scythe Statistical Library Version 1.0.3. All models return 'coda' mcmc objects that can then be summarized using the 'coda' package. Some useful
     utility functions such as density functions, pseudo-random number generators for statistical distributions, a general purpose Metropolis sampling algorithm, and tools for visualization are provided.
@@ -73,22 +78,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-
-# Package: MCMCpack
-# Version: 1.4-6
-# Date: 2020-02-12
-# Title: Markov Chain Monte Carlo (MCMC) Package
-# Author: Andrew D. Martin [aut], Kevin M. Quinn [aut], Jong Hee Park [aut,cre], Ghislain Vieilledent [ctb], Michael Malecki[ctb], Matthew Blackwell [ctb], Keith Poole [ctb], Craig Reed [ctb], Ben Goodrich [ctb], Ross Ihaka [cph], The R Development Core Team [cph], The R Foundation [cph], Pierre L'Ecuyer [cph], Makoto Matsumoto [cph], Takuji Nishimura [cph]
-# Maintainer: Jong Hee Park <jongheepark@snu.ac.kr>
-# Depends: R (>= 3.6), coda (>= 0.11-3), MASS, stats
-# Imports: graphics, grDevices, lattice, methods, utils, mcmc, quantreg
-# Description: Contains functions to perform Bayesian inference using posterior simulation for a number of statistical models. Most simulation is done in compiled C++ written in the Scythe Statistical Library Version 1.0.3. All models return 'coda' mcmc objects that can then be summarized using the 'coda' package. Some useful utility functions such as density functions, pseudo-random number generators for statistical distributions, a general purpose Metropolis sampling algorithm, and tools for visualization are provided.
-# License: GPL-3
-# SystemRequirements: gcc (>= 4.0)
-# URL: https://CRAN.R-project.org/package=MCMCpack
-# Packaged: 2020-02-13 05:59:49 UTC; park
-# NeedsCompilation: yes
-# Repository: CRAN
-# RoxygenNote: 6.1.1
-# Encoding: UTF-8
-# Date/Publication: 2020-02-13 07:10:06 UTC
