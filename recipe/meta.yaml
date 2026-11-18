@@ -1,4 +1,4 @@
-{% set version = "1.7-1" %}
+{% set version = "1.7-2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/MCMCpack_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/MCMCpack/MCMCpack_{{ version }}.tar.gz
-  sha256: 3b0b46746324197c38826cde06729f031311c3520d9d42815b7b356d29b58529
+  sha256: 799881cb8feb41a6bed849b71662a243158fd4ecd0ef0f2fcc26d0673421f398
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -69,8 +69,8 @@ about:
   home: https://CRAN.R-project.org/package=MCMCpack
   dev_url: https://github.com/cran/MCMCpack
   license: GPL-3.0-only
-  summary: Contains functions to perform Bayesian inference using posterior simulation for a number of statistical models. Most simulation is done in compiled C++ written in the Scythe Statistical Library Version 1.0.3. All models return 'coda' mcmc objects that can then be summarized using the 'coda' package. Some useful
-    utility functions such as density functions, pseudo-random number generators for statistical distributions, a general purpose Metropolis sampling algorithm, and tools for visualization are provided.
+  summary: Contains functions to perform Bayesian inference using posterior simulation for a number of statistical models. Most simulation is done in compiled C++ written in the Scythe Statistical Library Version 1.0.3. All models return 'coda' mcmc objects that can then be summarized using the 'coda' package. Some 
+    useful utility functions such as density functions, pseudo-random number generators for statistical distributions, a general purpose Metropolis sampling algorithm, and tools for visualization are provided.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
